@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import $ from "jquery";
 import jQuery from "jquery";
 import "./App.css";
 
@@ -10,7 +9,7 @@ class App extends Component {
   }
 
   render() {
-    function show() {
+    let show = () => {
       let intro = {
         sentence1: sent1[Math.floor(Math.random() * sent1.length)],
         sentence2: sent2[Math.floor(Math.random() * sent2.length)],
@@ -24,7 +23,7 @@ class App extends Component {
       setTimeout(() => {
         document.getElementById("intro_text").style.opacity = 0;
       }, 2000);
-    }
+    };
     jQuery(function () {
       show();
       let count = 1;
@@ -47,9 +46,19 @@ class App extends Component {
         }
       }, 3500);
     });
-    let sent1 = ["Hello!", "Hey!", "Hi there!"];
-    let sent2 = [" How are you?", " How've you been?", " How's it been?"];
-    let sent3 = [" Welcome back!", " Feel at home!", " Enjoy browsing!"];
+    let sent1 = ["Hello!", "Hey!", "Hi there!", "Bonjour!"];
+    let sent2 = [
+      " How are you?",
+      " How've you been?",
+      " How's it been?",
+      " How's everything going?",
+    ];
+    let sent3 = [
+      " Welcome back!",
+      " Feel at home!",
+      " Enjoy browsing!",
+      "Take care!",
+    ];
 
     return (
       <h1 id="intro_text">
